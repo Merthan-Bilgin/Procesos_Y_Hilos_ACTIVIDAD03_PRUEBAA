@@ -4,39 +4,27 @@ public class hilo_multiplicacion extends Thread {
 
 	private int fila;
 	private int columna;
-	private Matriz matrizA;
-	private Matriz matrizB;
+	private Matriz A;
+	private Matriz B;
 	private int resultado;
 
-	// Constructor
-	public hilo_multiplicacion(int fila, int columna, Matriz matrizA, Matriz matrizB) {
-
+	public hilo_multiplicacion(int fila, int columna, Matriz A, Matriz B) {
 		this.fila = fila;
 		this.columna = columna;
-		this.matrizA = matrizA;
-		this.matrizB = matrizB;
-
+		this.A = A;
+		this.B = B;
 	}
 
 	@Override
 	public void run() {
-
 		int suma = 0;
-
-		for (int k = 0; k < matrizA.getColumnas(); k++) {
-
-			suma += matrizA.getValor(fila, k) * matrizB.getValor(k, columna);
-
+		for (int k = 0; k < A.getColumnas(); k++) {
+			suma += A.getValor(fila, k) * B.getValor(k, columna);
 		}
-
 		resultado = suma;
-
 	}
 
 	public int getResultado() {
-
 		return resultado;
-
 	}
-
 }

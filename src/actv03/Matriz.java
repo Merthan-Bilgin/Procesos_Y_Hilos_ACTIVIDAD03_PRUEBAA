@@ -3,18 +3,17 @@ package actv03;
 import java.util.Scanner;
 
 public class Matriz {
+
 	private int filas;
 	private int columnas;
 	private int[][] datos;
 
-	// Constructor
 	public Matriz(int filas, int columnas) {
 		this.filas = filas;
 		this.columnas = columnas;
 		datos = new int[filas][columnas];
 	}
 
-	// Getters
 	public int getFilas() {
 		return filas;
 	}
@@ -31,10 +30,8 @@ public class Matriz {
 		datos[fila][columna] = valor;
 	}
 
-	// Leer matriz por consola
-	public void leerPorConsola() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Introduce los valores de la matriz:");
+	// Lectura por consola
+	public void leerPorConsola(Scanner sc) {
 		for (int i = 0; i < filas; i++) {
 			for (int j = 0; j < columnas; j++) {
 				System.out.print("[" + i + "][" + j + "]: ");
@@ -43,7 +40,7 @@ public class Matriz {
 		}
 	}
 
-	// Mostrar matriz por pantalla
+	// Mostrar matriz
 	public void mostrar() {
 		for (int i = 0; i < filas; i++) {
 			for (int j = 0; j < columnas; j++) {
